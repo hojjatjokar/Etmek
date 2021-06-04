@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should take a snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <h1>
+      Hello Bokken
+    </h1>
+    <button
+      class="storybook-button storybook-button--medium storybook-button--secondary"
+      style="background-color: green;"
+      type="button"
+    >
+      hojjat
+    </button>
+  </div>
+</DocumentFragment>
+`;
