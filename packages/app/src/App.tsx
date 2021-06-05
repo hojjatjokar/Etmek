@@ -1,20 +1,49 @@
 import React from 'react';
-import { Button } from '@etmek/components';
-import { sum } from '@etmek/utils';
-//import Icon from './assets/images/bokken.svg';
-// import './style.css';
+import Header from './components/header/header';
+import List from './components/list/list';
+import Filter from './components/filter/filter';
+import AddForm from './components/add-form/add-form';
+
+interface ITodo {
+  title: string;
+  state: boolean;
+}
 
 const App = (): JSX.Element => {
-  React.useEffect(() => {
-    console.log('utils', sum(1, 2));
+  const [todos, setTodos] = React.useState<ITodo[]>([]);
+  const [filter, setFilter] = React.useState<string>('all');
+  const [title, setTitle] = React.useState<string>('');
+
+  const handleChangeState = (title: string) => {
+    setTodos(
+      todos.map((todo: ITodo) => {
+        return {
+          ...todo,
+          state: todo.title === title ? !todo.state : todo.state,
+        };
+      })
+    );
+  };
+
+  const filteredTodos: ITodo[] = todos.filter(item => {
+    if (filter === 'all') return true;
+
+    if (filter === 'active') return item.state;
+    if (filter === 'inactive') return !item.state;
   });
-  // noob();
 
   return (
-    <div>
-      <h1>Hello Etmek</h1>
-      <Button label="hojjat" />
-    </div>
+    <>
+      <Header />
+      {filteredTodos.length === 0 && <p>list is empty, add your first todo</p>}
+      <List items={filteredTodos} onChange={handleChangeState} />
+      <Filter
+        filters={['all', 'active', 'inactive']}
+        setFilter={setFilter}
+        activeFilter={filter}
+      />
+      <AddForm todos={todos} setTodos={setTodos} />
+    </>
   );
 };
 

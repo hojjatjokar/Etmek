@@ -15,7 +15,8 @@
   "scripts": {
     "dev": "webpack serve --open --config ./build/webpack.dev.js",
     "build": "webpack --config ./build/webpack.prod.js",
-    "test": "jest"
+    "test": "jest",
+    "test:update": "jest --updateSnapshot"
   },
   "bugs": {
     "url": "https://github.com/hojjatjokar/bokken/issues"
