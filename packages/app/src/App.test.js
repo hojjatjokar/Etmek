@@ -8,9 +8,4 @@ describe('App', () => {
   test('renders App component', () => {
     render(<App />);
   });
-  it('should take a snapshot', () => {
-    const { asFragment } = render(<App />);
-
-    expect(asFragment(<App />)).toMatchSnapshot();
-  });
 });

@@ -38,7 +38,7 @@ function AddForm({ todos, setTodos }: IProps) {
           }}
         />
       </label>
-      <input type="submit" value="submit" />
+      <input type="submit" value="submit" role="button" />
     </form>
   );
 }
