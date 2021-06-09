@@ -20,7 +20,6 @@ const Button = ({ primary, size, label, ...props }: IProps) => {
       )}
       {...props}
     >
-      hi
       {label}
     </button>
   );
