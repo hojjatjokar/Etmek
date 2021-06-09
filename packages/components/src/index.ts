@@ -1,4 +1,5 @@
-import { Button } from './stories/Button';
-import { Header } from './stories/Header';
+import Button from './stories/Button';
 
-export { Button, Header };
+// export default { Button };
+export { Button };
+// export * from Button;

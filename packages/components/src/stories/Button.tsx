@@ -2,20 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './button.css';
 
-interface IProps {
+export interface IProps {
   primary?: boolean;
-  backgroundColor: string;
   size: 'small' | 'medium' | 'large';
   label: string;
   onClick: () => void;
 }
-export const Button = ({
-  primary,
-  backgroundColor,
-  size,
-  label,
-  ...props
-}: IProps) => {
+const Button = ({ primary, size, label, ...props }: IProps) => {
   const mode = primary
     ? 'storybook-button--primary'
     : 'storybook-button--secondary';
@@ -25,17 +18,18 @@ export const Button = ({
       className={['storybook-button', `storybook-button--${size}`, mode].join(
         ' '
       )}
-      style={backgroundColor && { backgroundColor }}
       {...props}
     >
+      hi
       {label}
     </button>
   );
 };
 
 Button.defaultProps = {
-  backgroundColor: 'green',
   primary: false,
   size: 'medium',
   onClick: undefined,
 };
+
+export default Button;

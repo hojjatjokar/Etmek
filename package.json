@@ -27,7 +27,9 @@
     "serve": "lerna exec --scope \"@etmek/${npm_config_package}\" npm run dev",
     "build": "lerna exec --scope \"@etmek/${npm_config_package}\" npm run build",
     "test": "lerna exec --scope \"@etmek/${npm_config_package}\" npm run test",
-    "story": "lerna exec --scope \"@etmek/components\" npm run storybook"
+    "story": "lerna exec --scope \"@etmek/components\" npm run storybook",
+    "build:all": "lerna run build --stream",
+    "link": "lerna link --force-local"
   },
   "husky": {
     "hooks": {
