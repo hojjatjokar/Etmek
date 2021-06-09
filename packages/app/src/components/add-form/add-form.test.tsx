@@ -5,7 +5,7 @@ import AddForm from './add-form';
 afterEach(cleanup);
 
 test('has proper inputs', async () => {
-  render(<AddForm />);
+  render(<AddForm todos={[]} setTodos={jest.fn} />);
 
   const items = await screen.findAllByRole('button');
   expect(items).toHaveLength(1);

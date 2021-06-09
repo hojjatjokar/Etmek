@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from '@etmek/components';
 
 interface ITodo {
   title: string;
@@ -38,7 +39,7 @@ function AddForm({ todos, setTodos }: IProps) {
           }}
         />
       </label>
-      <input type="submit" value="submit" role="button" />
+      <Button label="add" type="submit" />
     </form>
   );
 }

@@ -12,7 +12,6 @@ interface ITodo {
 const App = (): JSX.Element => {
   const [todos, setTodos] = React.useState<ITodo[]>([]);
   const [filter, setFilter] = React.useState<string>('all');
-  const [title, setTitle] = React.useState<string>('');
 
   const handleChangeState = (title: string) => {
     setTodos(
