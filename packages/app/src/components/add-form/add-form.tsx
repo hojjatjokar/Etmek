@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from '@etmek/components';
+import { Button, InputText } from '@etmek/components';
 
 interface ITodo {
   title: string;
@@ -27,18 +27,7 @@ function AddForm({ todos, setTodos }: IProps) {
         setTitle('');
       }}
     >
-      <label>
-        Title:
-        <input
-          type="text"
-          name="title"
-          value={title}
-          onChange={e => {
-            e.preventDefault();
-            setTitle(e.target.value);
-          }}
-        />
-      </label>
+      <InputText label="Title" value={title} onChange={setTitle} />
       <Button label="add" type="submit" />
     </form>
   );
